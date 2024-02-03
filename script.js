@@ -10,7 +10,6 @@ const getData = (url) => {
     })
 };
 
-
 const sendData = (url, data) => {
     return fetch(url, {
         method: 'POST',
@@ -22,6 +21,9 @@ const sendData = (url, data) => {
     .then(response => response.json())
 };
 
+getData(urlGet) 
+.then((data) => {
+    sendData(urlSend, data );
+})
 
-getData(urlGet);
-sendData(urlSend);
+
